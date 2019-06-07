@@ -2,6 +2,12 @@ package br.com.casadocodigo.loja.conf;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
+
+/**
+ * Mapeaia as classes de mapeamento e conexão
+ * @author bsilva
+ *
+ */
 public class ServletSpringMVC extends AbstractAnnotationConfigDispatcherServletInitializer {
 
 	@Override
@@ -10,8 +16,8 @@ public class ServletSpringMVC extends AbstractAnnotationConfigDispatcherServletI
 	}
 
 	@Override
-	protected Class<?>[] getServletConfigClasses() {		
-		return new Class[] {AppWebConfiguration.class};
+	protected Class<?>[] getServletConfigClasses() {		 
+		return new Class[] {AppWebConfiguration.class, JPAConfiguration.class}; 
 	}
 
 	@Override
