@@ -15,7 +15,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableTransactionManagement
 public class JPAConfiguration {
 	
-	//Aqui esta toda a parte de configuração com o banco de dados
 	@Bean
 	public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
 		
@@ -25,7 +24,7 @@ public class JPAConfiguration {
 		
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setUsername("root");
-		dataSource.setPassword("");
+		dataSource.setPassword("root");
 		dataSource.setUrl("jdbc:mysql://localhost/casadocodigo");
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
 		factoryBean.setDataSource(dataSource);
