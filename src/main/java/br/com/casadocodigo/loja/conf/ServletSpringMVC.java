@@ -5,34 +5,30 @@ import javax.servlet.Filter;
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-
-/**
- * Mapeaia as classes de mapeamento e conexão
- * @author bsilva
- *
- */
-public class ServletSpringMVC extends AbstractAnnotationConfigDispatcherServletInitializer {
+public class ServletSpringMVC extends AbstractAnnotationConfigDispatcherServletInitializer{
 
 	@Override
-	protected Class<?>[] getRootConfigClasses() {		
+	protected Class<?>[] getRootConfigClasses() {
 		return null;
 	}
 
+	//Deixa visivel as classes de configuração
 	@Override
-	protected Class<?>[] getServletConfigClasses() {		 
-		return new Class[] {AppWebConfiguration.class, JPAConfiguration.class}; 
+	protected Class<?>[] getServletConfigClasses() {
+		return new Class[] {AppWebConfiguration.class, JPAConfiguration.class};
 	}
 
+	//Coloca a /
 	@Override
-	protected String[] getServletMappings() {		
+	protected String[] getServletMappings() {
 		return new String[] {"/"};
 	}
 
+	//Coloca a pagina em Utf - 8
 	@Override
-	protected Filter[] getServletFilters() {
-		CharacterEncodingFilter encodingFilter = new CharacterEncodingFilter();
-		encodingFilter.setEncoding("UTF-8");
-		return new Filter[] {encodingFilter};
-	}
-	
+    protected Filter[] getServletFilters() {
+        CharacterEncodingFilter encodingFilter = new CharacterEncodingFilter();
+        encodingFilter.setEncoding("UTF-8");
+        return new Filter[] {encodingFilter};
+    }
 }

@@ -9,20 +9,18 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Produto{
+public class Produto {
 	
-	@Id 
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Integer id;
+	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+	private int id;
 	
 	private String titulo;
 	private String descricao;
-	private Integer paginas;
-	
+	private int paginas;
+
 	@ElementCollection
 	private List<Preco> precos;
 	
-	//Getters e Setters
 	public String getTitulo() {
 		return titulo;
 	}
@@ -35,21 +33,25 @@ public class Produto{
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	public Integer getPaginas() {
+	public int getPaginas() {
 		return paginas;
 	}
-	public void setPaginas(Integer paginas) {
+	public void setPaginas(int paginas) {
 		this.paginas = paginas;
 	}
-	public Integer getId() {
+
+	public int getId() {
 		return id;
 	}
-	public void setId(Integer id) {
+	
+	public void setId(int id) {
 		this.id = id;
-	}	
+	}
+	
 	public List<Preco> getPrecos() {
 		return precos;
 	}
+	
 	public void setPrecos(List<Preco> precos) {
 		this.precos = precos;
 	}
@@ -58,5 +60,5 @@ public class Produto{
 	public String toString() {
 		return "Produto [titulo=" + titulo + ", descricao=" + descricao + ", paginas=" + paginas + "]";
 	}
-	
+
 }
