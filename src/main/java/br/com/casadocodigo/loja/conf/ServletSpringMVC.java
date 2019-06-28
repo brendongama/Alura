@@ -31,8 +31,10 @@ public class ServletSpringMVC extends AbstractAnnotationConfigDispatcherServletI
         return new Filter[] {encodingFilter};
     }
 	
+	//veja tbm https://cursos.alura.com.br/forum/topico-atualizacao-resources-nao-sao-carregados-na-aula-10-58813
 	@Override
 	protected void customizeRegistration(Dynamic registration) {
-	    registration.setMultipartConfig(new MultipartConfigElement(""));
+			registration.setMultipartConfig(new MultipartConfigElement(""));
 	}
+	
 }
